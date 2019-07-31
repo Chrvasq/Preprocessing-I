@@ -56,3 +56,152 @@ table {
 html, body {
     height: 100%;
 }
+
+html {
+	font-size: 62.5%;
+}
+
+@nav-link-color: black;
+@background-color-header: lightgrey;
+@background-color-footer: darkgray;
+@fonts: arial, sans-serif;
+
+.flex-nav() {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.flex-column() {
+	display: flex;
+	flex-direction: column;
+}
+
+.button-style() {
+	background-color: darkgrey;
+	padding: 1rem;
+	font-size: 1.6rem;
+	color: white;
+	width: 20%;
+}
+
+.container {
+	width: 800px;
+	margin: 0 auto;
+	font-family: @fonts;
+
+	nav {
+		.flex-nav;
+		padding: 1rem;
+		a {
+			margin: 0 2rem;
+			font-size: 1.6rem;
+			text-decoration: none;
+			color:@nav-link-color;
+		}
+	}
+
+	.top-header {
+		.flex-column;
+		padding: 4rem 2rem 5rem 2rem;
+		background-color: @background-color-header;
+		img {
+			width: 40%;
+		}
+		h1 {
+			font-size: 4rem;
+		}
+		h3 {
+			font-size: 1.6rem;
+			padding: 1rem 0;
+			border-bottom: 1px solid grey;
+		}
+		p {
+			padding: 1rem 0;
+			font-size: 1.2rem;
+		}
+		button {
+			.button-style;
+		}
+	}
+
+	.middle-section {
+		display: flex;
+		justify-content: space-between;
+		article {
+			width: 48%;
+			padding: 1rem 0;
+			p {
+				font-size: 1.6rem;
+			}
+			header {
+				font-size: 1.6rem;
+				padding-bottom: 1rem;
+			}
+			table {
+				width: 100%;
+			}
+			td, th {
+				border: 1px solid #dddddd;
+				text-align: left;
+				padding: 1rem;
+				font-size: 1.2rem;
+			}
+		}
+		article:first-child {
+			header {
+				font-size: 2.4rem;
+			}
+		}
+	}
+
+	.bottom-section {
+		.flex-column;
+		margin: 1rem 0;
+		h1 {
+			font-size: 1.8rem;
+			padding: 0.5rem 0;
+			border-bottom: 1px solid #dddddd;
+		}
+		table {
+			width: 100%;
+			th {
+				font-weight: bold;
+			}
+			tr td:first-child {
+				font-weight: bold;
+			}
+		}
+		td, th {
+			text-align: left;
+			padding: 1rem;
+		}
+		tr:nth-child(even) {
+			background-color: #dddddd;
+		}
+	}
+
+	.contact-section {
+		.flex-column;
+		margin-bottom: 1rem;
+		h1 {
+			font-size: 1.6rem;
+			padding-bottom: 1rem;
+			text-decoration: underline;
+		}
+		p {
+			font-size: 1.4rem;
+		}
+	}
+}
+
+footer {
+	background-color: @background-color-footer;
+	width: 800px;
+	margin: 0 auto;
+	p {
+		color: white;
+		text-align: center;
+		font-size: 1.4rem;
+		padding: 2rem;
+	}
+}
